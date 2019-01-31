@@ -1,0 +1,38 @@
+#container {
+    display: flex;
+}
+.flex-item {
+    background: #f4f4f4;
+    border: 1px solid brown;
+    width: 50%;
+    height: 500px;
+    padding-top: 10px;
+    padding-left: 10px;
+}
+h1 {
+    font-family: Arial, Helvetica, sans-serif;
+    color: #443939;
+    font-size: 1.5em;
+}
+#inputRadius {
+    width: 200px;
+}
+#calculate {
+    margin-top: 10px;
+}
+#output {
+    background-color: #a19f9f;
+    width: 200px;
+    padding: 3px;
+    box-sizing: border-box;
+    color: #e9e9e9;
+    border: 1px solid brown;
+    margin-top: 10px;
+}
+
+#mycanvas {
+    width: 400px;
+    height: 400px;
+    background-color: #f3f3f3;
+    border: 1px solid brown;
+}
