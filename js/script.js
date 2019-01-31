@@ -1,7 +1,8 @@
 // bonus question -
-/* document.onload = setInterval(drawCircles, 100);
+/*
+document.onload , intervalID = setInterval(drawCircles, 100);
 
-
+var intervalR = 1;
 function drawCircles() {
     var canvas = document.querySelector("#mycanvas");
     var context = canvas.getContext('2d');
@@ -13,23 +14,33 @@ function drawCircles() {
         var radius = centerX;
     }
     
-    for (var i = 1; i <= radius; i++) {
+    if (intervalR <= radius) {
     context.beginPath();
-    context.arc(centerX, centerY, i, 0, 2 * Math.PI, false);
+    context.arc(centerX, centerY, intervalR, 0, 2 * Math.PI, false);
    
     context.lineWidth = 1;
     context.strokeStyle = '#003300';
     context.stroke();
+    intervalR++;
+    } else {
+    clearInterval(intervalID);
     }
 }
 */
 var btn = document.querySelector("#calculate");
+var btnClear = document.querySelector("#clear");
+btnClear.addEventListener("click", clearCanvas);
 btn.addEventListener("click", calculate);
+function clearCanvas() {
+var canvas = document.querySelector("#mycanvas");
+var context = canvas.getContext('2d');
+context.clearRect(0, 0, canvas.width, canvas.height);
+}
 
 function calculate() {
     var r = document.querySelector("#inputRadius").value;
 
-    if (r === "") {
+    if (r === "" || isNaN(r)) {
         alert("Please enter a valid number!");
         return;
     } else if (!isNaN(r)) {
